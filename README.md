@@ -9,4 +9,6 @@ Para evitar a necessidade de instalar o Python em diversos computadores do setor
 
 Foi optado utilizar Excel devido a falta de ambientação do resto da equipe com tecnologias de SGBD.
 
-Como tema foi utilizado o Forest theme for ttk de rdbende,
+Como tema foi utilizado o Forest theme for ttk de rdbende.
+
+![image](https://user-images.githubusercontent.com/98277143/231051725-b3ac88a8-e8b0-4a85-86e4-9b0dd8b132d3.png)
