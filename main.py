@@ -28,6 +28,7 @@ def salvar_data():
         setor = setor_combobox.get()
         local = local_combobox.get()
         caixa = caixa_entry.get()
+        status = instru_label
         if nome and sobrenome and cpf and idunico and atendimento and local:
             filepath = "data.xlsx"
             if not os.path.exists(filepath): 
@@ -41,6 +42,8 @@ def salvar_data():
             sheet.append([idunico, atendimento, nome, sobrenome, cpf, datapront, local, estante, prateleira, caixa, setor, datanasc])
             workbook.save(filepath)
 
+
+            status = instru_label.config(text="Registro de " + nome + " salvo.")
             nome = nome_entry.delete(0, tk.END)
             sobrenome = sobrenome_entry.delete(0, tk.END)
             cpf = cpf_entry.delete(0, tk.END)
@@ -53,6 +56,8 @@ def salvar_data():
             setor = setor_combobox.delete(0, tk.END)
             local = local_combobox.delete(0, tk.END)
             caixa = caixa_entry.delete(0, tk.END)
+
+
         else:
             tk.messagebox.showwarning(title="Erro", message="Os campos Nome, Sobrenome, CPF, Registro, Atendimento e Local devem ser preenchidos.")
 
@@ -60,7 +65,7 @@ def salvar_data():
 # Root
 root = tk.Tk()
 root.iconbitmap("data/bar.ico")
-root.title("Cadastro de prontuário físico para o SAME")
+root.title("GUISAME")
 root.option_add("*tearOff", False)
 style = ttk.Style(root)
 root.tk.call("source", "data/tema/forest-dark.tcl")
@@ -141,7 +146,7 @@ caixa_entry = ttk.Entry(info_pac_frame)
 caixa_entry.grid(row=5, column=3)
 
 instru_label = ttk.Label(info_pac_frame, text="")
-instru_label.grid(row=6, column=0)
+instru_label.grid(row=6, column=0, columnspan=2)
 
 
 # Botão final
